@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 import uvicorn
-
+import os
 from app.core.db import init_db
 from app.api.routes import router as api_router
 
@@ -30,5 +30,5 @@ async def startup_event():
 app.include_router(api_router)
 
 if __name__ == "__main__":
-    # For debugging directly with python app/main.py
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port, reload=True)

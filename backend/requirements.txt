@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+snowflake-connector-python
+pydantic
+pydantic-settings
+google-generativeai
+python-multipart
+aiofiles
+python-dotenv
+cryptography
+tenacity
+geopy
